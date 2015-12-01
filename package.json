@@ -10,8 +10,8 @@
     "gulp": "^3.8.11",
     "gulp-concat": "^2.5.2",
     "gulp-cssmin": "^0.1.6",
-    "gulp-jscs": "^2.0.0",
-    "gulp-jshint": "^1.9.4",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0",
     "gulp-less": "^3.0.2",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.0",
@@ -31,7 +31,7 @@
     "grunt-autoprefixer": "^3.0.3",
     "grunt-contrib-jshint": "^0.11.1",
     "grunt-contrib-watch": "^0.6.1",
-    "gulp-autoprefixer": "2.3.1",
+    "gulp-autoprefixer": "3.1.0",
     "load-grunt-tasks": "^3.1.0"
   },
   "scripts": {
@@ -41,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/llxgbs/ecom-llx-shared.git"
+    "url": "https://github.com/ferile/Front-End-Starter-Kit-and-Framework"
   },
   "author": "Andy Fairlie",
   "license": "ISC"
