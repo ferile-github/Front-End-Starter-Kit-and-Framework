@@ -1,0 +1,101 @@
+// Set some variables
+@captionSpacing : @baseline-small;
+@inlineLabelWidth : 25%;
+@formRowSpacing: 20px;
+
+
+// Default state for form rows : label above the input
+.f-field-wrapper {display: block;}
+
+// Form action buttons to the right
+.f-field-button {text-align: right;}
+
+
+// Any assistance messages that appear near an input. ie "Please enter between 5 - 20 characters"
+.form-caption {
+	padding-left: @captionSpacing;
+	display: block;
+	font-style: italic;
+}
+
+// Show Validation messages on validation
+.f-error_message {
+	display: inline-block;
+	padding-left: @captionSpacing;
+	color: @error;
+}
+
+
+
+// Form rows - Label on top, input underneath
+.f-field {
+	margin-bottom: @formRowSpacing;
+	clear: both;
+
+	input, textarea, select {
+		width: 300px;
+		max-width: 100%;
+	}
+
+	input[type=radio], input[type=checkbox] {
+		display: inline-block;
+		min-width: 0;
+		max-width: none;
+	}
+
+	&.f-field-hidden{
+		display: none;
+	}
+
+	.f-label {}
+	.f-required-marker {
+		color: @error;
+	}
+	label.error{
+		display: block;
+	}
+
+	// Inline labels for inputs
+	&.label-inline {
+		&.form-row-checkbox {
+			padding-left: @inlineLabelWidth;
+			margin-left: @captionSpacing;
+		}
+
+		label.f-label{
+			width: @inlineLabelWidth;
+			text-align: right;
+			vertical-align: top;
+			padding: 6px @captionSpacing 0 0;
+			float: left;
+
+		}
+		.f-field-wrapper {
+			display: inline-block;
+		}
+
+		.f-error_message  {
+			display: block;
+		}
+	}
+
+	// Radio form rows
+	&.form-row-radio {
+		.form-caption {
+			margin-left: 1.6em;
+			display: block;
+			padding-left: 0; // reset native padding from above
+		}
+	}
+}
+
+
+
+// Hidden labels
+.label-removed label.label-textfield,
+.label-removed label.label-checkbox,
+.label-hidden label.label-textfield,
+.label-hidden label.label-checkbox {
+	left: -999em;
+	position: absolute;
+}

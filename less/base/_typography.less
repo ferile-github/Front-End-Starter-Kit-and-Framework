@@ -1,0 +1,125 @@
+html {
+	font-size: ~"@{body-copy-size}px";
+	height: 100%;
+}
+body {
+	font-family: @body-copy-font;
+	font-size: 1rem;
+	color: @body-copy-color;
+	line-height: 1.5;
+	margin: 0;
+}
+
+::selection {       background: @grey2; /* WebKit/Blink Browsers */}
+::-moz-selection {  background: @grey2; /* Gecko Browsers */}
+
+// Base Typography
+// ---------------
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 .6em;
+	line-height: 1;
+	a, a:hover {
+		text-decoration: none;
+	}
+}
+
+
+h1, .h1 { .heading(1) }
+h2, .h2 { .heading(2) }
+h3, .h3 { .heading(3) }
+h4, .h4 { .heading(4) }
+h5, .h5 { .heading(5) }
+h6, .h6 { .heading(6) }
+
+.h1-bold { .heading(1, bold) }
+.h2-bold { .heading(2, bold) }
+.h3-bold { .heading(3, bold) }
+.h4-bold { .heading(4, bold) }
+.h5-bold { .heading(5, bold) }
+.h6-bold { .heading(6, bold) }
+
+
+.bold,
+strong,
+.strong {
+	font-weight: bold;
+}
+
+// to skip  hX styling when use hX tag only for SEO
+.inherit-font-styles {
+	font: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
+}
+
+a,
+.btn-tertiary,
+.hyperlink {
+	color: @link-color ;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+p {
+	margin: 0 0 @baseline-medium 0;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: solid 1px @border-color;
+	margin: 0;
+	padding: 0;
+}
+
+small,
+.small {
+	font-size: 80%;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th {
+	white-space: nowrap;
+	font-weight: normal;
+}
+
+th[scope=row] {
+	text-align: right;
+}
+
+th[scope=col] {
+	text-align: left;
+}
+
+ul, ol, dl {
+	margin: 0 0 @baseline-medium @baseline-large;
+	padding: 0;
+}
+
+
+
+// Table Styles
+// ------------
+.table-basic {
+	tbody {
+		border: solid 1px @border-color;
+	}
+	td, th {
+		padding: 5px;
+	}
+
+	th {
+		border: none;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: normal;
+	}
+	td, th[scope=row] {
+		border-bottom: solid 1px @border-color
+	}
+}

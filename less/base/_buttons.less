@@ -1,0 +1,140 @@
+.button-full-width {
+	padding-left: 0;
+	padding-right: 0;
+	text-align: center;
+	width: 100%;
+}
+
+.btn-primary,
+.btn-secondary  {
+	display: inline-block;
+	background: none;
+	border: none;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 1.5px;
+	text-align: center;
+	line-height: 1; // override body line-height, and ensures buttons and other elements are styled similarly
+	padding: 10px 15px;
+	cursor: pointer;
+	.transition(all 200ms ease-in);
+
+}
+
+.btn-primary {
+	background: @button-primary-bg;
+	border: solid 1px @button-primary-bg;
+	color: @white;
+
+	.no-touch &:hover,
+	.touch &:active {
+		background: @button-primary-bg-hover;
+		color: @white; // For overriding links with a button class
+	}
+	&.disabled,
+	&[disabled],
+	&.disabled:hover,
+	&[disabled]:hover {
+		background: @body-copy-color;
+		border-color: @body-copy-color;
+	}
+}
+
+.btn-secondary {
+	background: @button-secondary-bg ;
+	border: solid 1px @grey5;
+	color: @grey5;
+
+	.no-touch &:hover,
+	.touch &:active {
+		background: @button-secondary-bg-hover;
+		color: @grey5; // For overriding links with a button class
+	}
+
+	&.disabled,
+	&[disabled],
+	&.disabled:hover,
+	&[disabled]:hover {
+		background: @white;
+	}
+}
+
+
+.btn-tertiary {
+	background: @button-tertiary-bg ;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	text-transform: uppercase;
+
+	.no-touch &:hover,
+	.touch &:active {}
+
+
+	&.disabled,
+	&[disabled],
+	&.disabled:hover,
+	&[disabled]:hover {
+		text-decoration: none;
+		color: @grey5;
+	}
+}
+
+
+
+// Call to action buttons
+// ----------------------
+.btn-cta-primary,
+.btn-cta-secondary {
+	display: inline-block;
+	position: relative;
+	border: none;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	font-weight: normal;
+	letter-spacing: 1.2px;
+	background: none;
+	cursor: pointer;
+	.transition(background 200ms ease-in);
+
+	.no-touch &:hover,
+	.touch &:active {
+		text-decoration: underline;
+	}
+
+	&.disabled,
+	&[disabled],
+	&.disabled:hover,
+	&[disabled]:hover  {
+
+	}
+}
+
+.btn-cta-primary {
+	.font-size(14);
+}
+
+.btn-cta-secondary {
+	.font-size(12);
+}
+
+
+// Utility styles for buttons
+.disabled, [disabled] {
+	cursor: default;
+	opacity: .5;
+}
+
+.btn-large {
+	.font-size(16);
+	padding: 14px 38px;
+}
+.btn-medium {
+	.font-size(14);
+	padding: 14px 35px;
+}
+.btn-small {
+	.font-size(10);
+	padding: 8px 10px;
+}

@@ -1,0 +1,191 @@
+// Form Validation
+// ---------------
+
+// Validation colour
+.is-error,
+.error,
+.error-form {
+	color: @error;
+}
+
+// Label with the asterisk showing required fields
+.required-indicator {
+	display: block;
+	text-align: right;
+}
+
+.required-asterisk {
+	color: @error;
+	&:after {
+		content: "*";
+	}
+}
+
+
+// Error message at top of form, with details about what needs to be entered still
+.error-form {
+	margin-bottom: @baseline-small;
+}
+
+
+// Form elements
+// -------------
+// Full width input field
+.input-full-width {
+	max-width: none;
+	width: 100%;
+}
+
+label {
+	cursor: pointer;
+	display: inline-block;
+}
+
+.f-label-value {
+	display: inline-block;
+}
+
+textarea {
+	min-height: 100px;
+	overflow: auto;
+}
+
+legend {
+	.font-size(15);
+	.text-uppercase();
+}
+
+input,
+textarea,
+select {
+	font-family: @body-copy-font;
+	color: @body-copy-color;
+	border: solid 1px @border-color;
+	padding: 6px 10px;
+	line-height: normal;
+	border-radius: 0; // normalise for Safari and iOS
+	box-shadow: none; // normalise for Safari and iOS
+
+
+	&:hover {
+		border-color: @grey4;
+	}
+
+	&:focus {
+		border-color: @grey4;
+		outline: none;
+	}
+
+	&.error {
+		border-color: @error;
+		background-color: lighten(@error, 50%)
+	}
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	// Target Webkit browsers only
+	select {
+		-webkit-appearance: none;
+		background-position: center right;
+		background-size: 55px/2 22px/2;
+		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAWCAYAAACVIF9YAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTc0RkFGQzMxRDU2MTFFNDhCNTdFOEM4RTc5Mjc3OUIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTc0RkFGQzQxRDU2MTFFNDhCNTdFOEM4RTc5Mjc3OUIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBNzRGQUZDMTFENTYxMUU0OEI1N0U4QzhFNzkyNzc5QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBNzRGQUZDMjFENTYxMUU0OEI1N0U4QzhFNzkyNzc5QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrCkDIcAAAJcSURBVHjazJZbS1RRFMf3bLUHFQeJIqKnEJnxQSxDCDNKzUsWg4lKfQWfhfBB8CWCvkBfQKErBKVhiogiisSIIEWkpoiIKWJ5wUjG/4KlrA678cy5zSz4szhrn73X+Z19WTuUSCRU5+Ou60qp59D9Z0+fLKv/GN5Tbgxjm8Zsh+uA7qH9l/LYNBJUwA9ApdAIni+pgAy5WuF6oSroA57zPQeEXkJhfr4cFCRytDBcFoduQD1+ANJf3BaxImgYH3DRR7gYXB+UI8LjULfngFj30/D1FshihrzgA1wTr5ozIjwB3cW37Poxg7T5pygBJDd5hCHPewjXCPfWAjfJcL/9WC1anHATDLkj2ksY8pwHueoMcLR6GpB726/tEKIyYfnLVXyq5onwLFQDbTjMUwu9g3JF7DON6SfcPzMoZnIMjvbJnghTCfkEnXWQ45YBLg7d8RvOCMiQo1R4LZBl0CBUmML4N6m+WeBmGG4riFqrk9w6RuBiFsirDBm2MXalAY6Weh3G3gzqMqFPuVoNwTVD+yJ8zQYkXf36IXkzmaO9iDF/qgBN27g/EswD6ECEj693BYYuprYvUHXQcLYAGfIjz+SfU2ap3DC7XwkOWldpMG33RUDSrLRYICsZkvbZFT5pJdw3Li9rKk2mU3z/PdRmgaS6OcRw8oT9znCrKo2mHfShmvbQsFxljVyAbkMrKs2mHfajK9cj6K+hbTFT4NwAkr1hyEMRW+IDZVlliGW77P+Kf1Iv7zWC+6EyyLI9GOMFz2Kc915G2ckSjUSjbpbra2jeaWeXuZPakQADAFVhrlalv0rLAAAAAElFTkSuQmCC");
+		padding-right: 30px;
+		&:hover {
+			background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAWCAYAAACVIF9YAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTc0RkFGQzcxRDU2MTFFNDhCNTdFOEM4RTc5Mjc3OUIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTc0RkFGQzgxRDU2MTFFNDhCNTdFOEM4RTc5Mjc3OUIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBNzRGQUZDNTFENTYxMUU0OEI1N0U4QzhFNzkyNzc5QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBNzRGQUZDNjFENTYxMUU0OEI1N0U4QzhFNzkyNzc5QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pl+Q6oIAAAJGSURBVHja3JZtS1RBFMdnx80XKUlIEuGrEFl9IWkRiFqWtj1YLCUp+hX8DoLfwi9goKIg+BBqSBCLErIRxC4hZotEZIuspqIo2//AEYZhFu/u3rn34oE/hzn3zpn5zXMol8uJSENDqxBiFHqVSibTIo/hP1GKIbcpZz/cEPQS3/eEyybRwH34BagJWkG5VnhkaOst3BjUAc2hXOk6IDQBVXH5tleQaKOX4co41A6N2ACkUcwqsTroAzpwyyJcDO4ddEUJf4KGXQfEuv8M/1SDrGfImxbgenjVlCvhOPQCfTmwMYO0+deoAUjd5BGGrHER7jnctAa3ynD7NlaLVE64OEP+U743MuQNF9qKGuBo9TxD21lb2yFE14Q2yh18qlYo4a9QF/S3yHa6oRnoqhJbp5w24YyADPkQbl7r0BfuaKbANjrpCtByJRhu1/ZpLfNcyB/p4oUOlfAdaBG6XkD+BwY4GqgnXsDlBWTIFbiYBtnCkFUOcrcZ4GipR5E7IzwyecHTahnuNXSkhO85gGzlJa6+TL7REkfOHeGhSQfvR4J5Ax0r4fPn3TVDFdM3eoQ+9hrOESBDvueZPLlglu4aZjdFcNAf4YNJpz8CkmalV4NsU07bZmhJg/vO18tv4ZPJAv+fhfo0SLo3lxlOPWE3GO6X8NFkEXXowh4wLNdqpbwJPYK2hc8mi6xHT65B6NTw7UdQ4EoBJJtiyDMl9pMPlLQIiIVLrD/JgzTGe43gtkSALOxCjnGexQTvvUCZ8bF9mey/AAMAvMq0YiheXfoAAAAASUVORK5CYII=");
+		}
+		&[size] {
+			background: none;
+			padding-right: inherit;
+		}
+	}
+
+}
+
+
+
+// Standard, unstyled radio and checks
+input[type=radio],
+input[type=checkbox],
+input[type=image],
+input[type=hidden] {
+	color: inherit;
+	border: none;
+	padding: 0;
+	min-width: 0;
+	width: auto;
+	display: inline-block;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+
+
+
+// Styled radio and checkboxes
+.f-field-checkbox,
+.f-field-radio {
+	input[type=checkbox],
+	input[type=radio] {
+		position: absolute;
+		left: -1000em;
+
+		// Handle disabled states
+		&[disabled] + .fake-checkbox,
+		&[disabled]  + .fake-radio {
+			opacity: .5;
+		}
+	}
+}
+
+// The fake checkboxes and radios
+.fake-checkbox,
+.fake-radio  {
+	position: relative;
+	top: 2px;
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background: @white;
+	background:    -moz-linear-gradient(-45deg, @white 0%, @grey1 100%);
+	background:        -webkit-gradient(linear, left top, right bottom, color-stop(0%,@white), color-stop(100%,@grey1));
+	background: -webkit-linear-gradient(-45deg, @white 0%,@grey1 100%);
+	background:      -o-linear-gradient(-45deg, @white 0%,@grey1 100%);
+	background:     -ms-linear-gradient(-45deg, @white 0%,@grey1 100%);
+	background:         linear-gradient(135deg, @white 0%,@grey1 100%);
+	border: solid 1px @border-color;
+	margin-right: @baseline-small/2;
+	.transition(background linear 100ms);
+}
+.fake-radio { border-radius: 50%;}
+
+.f-field-checkbox:hover .fake-checkbox,
+.f-field-radio:hover    .fake-radio {
+	border-color: @grey3;
+}
+
+// Handle the on state
+.f-field-checkbox input[type=checkbox]:checked ~ .fake-checkbox,
+.f-field-radio    input[type=radio]:checked    ~ .fake-radio,
+.is-active > .fake-checkbox,
+.is-active > .fake-radio {
+	background: @grey4;
+	border-color: @grey4;
+	box-shadow: inset 0 0 0 1px @white;
+}
+
+
+// Placeholder text on inputs
+::-webkit-input-placeholder {color: @grey3; font-family: @body-copy-font;}
+          :-moz-placeholder {color: @grey3; font-family: @body-copy-font;}
+         ::-moz-placeholder {color: @grey3; font-family: @body-copy-font;}
+     :-ms-input-placeholder {color: @grey3; font-family: @body-copy-font;}
+
+
+

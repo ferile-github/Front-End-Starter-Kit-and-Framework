@@ -1,0 +1,168 @@
+/* Style guide only - do NOT use these styles on the main website */
+#cssprops {
+	position: absolute;
+	z-index: 9999;
+	background: #ddfccd;
+	padding: 5px;
+	display: none;
+	line-height: 1;
+	font-size: 12px;
+	-webkit-box-shadow: 5px 5px 20px 5px rgba(0,0,0,.1);
+	box-shadow: 5px 5px 20px 5px rgba(0,0,0,.1);
+	border: solid 1px white;
+	color: #333;
+	line-height: 1.2;
+}
+.css-title {
+	display: block;
+	border-bottom: solid 1px #333;
+	padding-bottom: 4px;
+}
+
+.css-label, .css-value, .css-swatch  {
+	display: inline-block;
+	vertical-align: middle;
+}
+.css-label {
+	width: 10em;
+	vertical-align: middle;
+}
+
+.css-swatch {
+	width: 15px;
+	height: 15px;
+	border: solid 1px white;
+	margin-right: 5px;
+}
+
+
+.colour-swatch-PATTERN-LIBRARY-ONLY {
+	display: inline-block;
+	color: white;
+	padding: 10px;
+}
+
+
+.menu-PATTERN-LIBRARY-ONLY li {
+	margin: 0 5px;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.menu-PATTERN-LIBRARY-ONLY li a {
+	display: block;
+}
+
+
+.a-level-2-wrapper {
+	position: absolute;
+	z-index: 9999;
+	left: -20px;
+	top: 100%;
+	display: none;
+	background: white;
+	border: solid 1px silver;
+	width: 20em;
+	text-align: left;
+}
+
+.a-level-1-item:hover>.a-level-2-wrapper {
+	display: block;
+}
+
+
+.toggle-classname-wrapper {
+	position: fixed;
+	top : 10px;
+	left: 10px;
+	background: black;
+	color: white;
+	padding: 0 10px;
+}
+
+body {
+	display: block;
+	padding-bottom: 300px
+}
+.section-heading {
+	text-transform: uppercase;
+	clear: both;
+}
+
+.toggle-classes *:hover {
+	outline: solid 1px red;
+	overflow: hidden;
+}
+
+.toggle-classes *:hover:after {
+	content: attr(class);
+	display: inline-block;
+	background: black;
+	font-size: 13px;
+	color: white;
+	font-family: "courier";
+	font-weight: normal;
+	text-transform: lowercase;
+
+	position: absolute;
+	z-index: 999;
+	white-space: nowrap;
+	opacity: 1 !important;
+}
+
+h1.section-heading {
+	background: #999;
+	padding: 5px;
+	font-size: 14px;
+	margin: 100px 0 10px 0;
+	color: white;
+	font-weight: normal;
+	font-family: sans-serif;
+	text-align: right;
+	border-right: solid 10px #111
+}
+h1.section-heading:first-of-type {
+	margin-top: 0;
+}
+h2.section-heading {
+	font-size: 12px;
+	margin-bottom: 10px;
+	color: black;
+	margin: 20px 0;
+}
+
+#result {
+	padding: 10px;
+}
+#result:empty {
+	border: none;
+	padding: 0;
+}
+#navigation .is-current {
+	color: black;
+	text-decoration: underline;
+	cursor: default;
+}
+
+.meow-box {
+	width: 20%;
+	float: left;
+	margin: 0 10px;
+}
+
+@media only screen and (max-width: 700px) {
+	body {
+		width: auto;
+	}
+	#result {
+		border: none;
+		padding: 0;
+	}
+	.meow-box {
+		width: 100%;
+		float: none;
+		margin: 0;
+	}
+}
+
+

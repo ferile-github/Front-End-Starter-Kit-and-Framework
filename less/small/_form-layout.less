@@ -1,0 +1,45 @@
+.f-field {
+	margin-bottom: @baseline-small;
+
+	input, textarea, select {
+		display: block;
+		width: 100%;
+	}
+
+	// Tooltip aligment
+	& + .form-field-tooltip.form-field-tooltip{
+		margin: 0;
+
+		.js-tooltip{
+			display: block;
+		}
+		.js-tooltip-content{
+			width: auto;
+			margin: 0;
+		}
+	}
+
+}
+
+select,
+.f-select{
+	background-color: transparent;
+}
+
+// Show Validation messages on validation
+.f-field-wrapper span.error {
+	display: block;
+	padding-left: 10px;
+}
+
+// Show Validation messages on validation
+.f-error_message {
+	display: block;
+	color: @error;
+}
+
+.fake-checkbox,
+.fake-radio,
+.f-label-value {
+	pointer-events: none;
+}

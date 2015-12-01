@@ -1,0 +1,99 @@
+// Base variables
+// --------------
+@body-copy-color : @grey4;
+@body-copy-size  : 14;
+
+@body-copy-font     : @font-arial;
+@body-copy-font-bold: @body-copy-font;
+@heading-font       : @body-copy-font;
+@heading-font-bold  : @body-copy-font;
+
+// Fonts
+// -----
+@font-arial         : Arial, "Helvetica Neue", Helvetica, sans-serif;
+@font-georgia       : Georgia, Times, "Times New Roman", serif;
+
+// Colour Palette
+// --------------
+@error : #9e2022;   // Error Red colour
+@grey5 : #333;      // Ranges from Dark to Light. Lower number is lighter
+@grey4 : #616365;
+@grey3 : #999;
+@grey2 : #d1d1d1;
+@grey1 : #f3f3f3;
+
+
+// Other Colours
+@black : #000;
+@white : #fff;
+
+// Link Colours
+@link-color : 			#5caad7;
+@link-color-hover : 	darken(@link-color, 20%);
+@link-color-active : 	orange;
+
+// Shading colour
+@box-shading: @grey2;
+
+// Border Color - for tables, form elements, boxes, page layout
+@border-color : @grey2;
+
+// Button colours
+@button-primary-bg : @black;
+@button-primary-bg-hover : @grey5;
+
+@button-secondary-bg : @white;
+@button-secondary-bg-hover : @grey1;
+
+@button-tertiary-bg : transparent;
+@button-tertiary-bg-hover : transparent;
+
+// Easing
+@easing : 400ms all @cubic-bezier;
+
+
+// Margins
+@baseline-small  : 10px;
+@baseline-medium : 15px;
+@baseline-large  : 30px;
+@baseline-huge   : 60px;
+
+@small-baseline-small  : 8px;
+@small-baseline-medium : 12px;
+@small-baseline-large  : 20px;
+@small-baseline-huge   : 40px;
+
+
+// Padding
+@padding-small  : 5px;
+@padding-medium : 15px;
+@padding-large  : 30px;
+@padding-huge   : 50px;
+
+
+@small-padding-small  : 5px;
+@small-padding-medium : 12px;
+@small-padding-large  : 20px;
+@small-padding-huge   : 40px;
+
+// Z-indexes
+@z-max               : 1000;
+@z-min               : 1;
+
+
+// Breakpoints
+@site-max 				: 1280px;
+@tablet-max				: 1025px;
+@tablet-min 			: 767px;
+@small-max 				: @tablet-min;
+
+@screen : 			~"only screen";
+@print : 			~"only print";
+
+@large: 			~"@{screen} and (min-width : 959px)";
+@medium:  			~"@{screen} and (max-width : 959px)";
+@small : 			~"@{screen} and (max-width : @{small-max})";
+
+
+@tablet-portrait:  	~"@{screen} and (min-width : @{tablet-min}) and (max-width : 959px)";
+@tablet-landscape:  ~"@{screen} and (min-width : @{tablet-min}) and (max-width : @{tablet-max})";

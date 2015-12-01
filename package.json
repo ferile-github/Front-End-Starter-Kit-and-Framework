@@ -1,0 +1,48 @@
+{
+  "name": "Framework",
+  "description": "Dependencies",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-cssmin": "^0.1.6",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jshint": "^1.9.4",
+    "gulp-less": "^3.0.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-strip-debug": "^1.0.2",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.4",
+    "imagesloaded": "^3.1.8",
+    "jshint-stylish": "^2.0.1",
+    "lodash": "^3.5.0",
+    "promise": "^7.0.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0",
+    "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-contrib-jshint": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "gulp-autoprefixer": "2.3.1",
+    "load-grunt-tasks": "^3.1.0"
+  },
+  "scripts": {
+    "gulp": "gulp",
+    "minify": "gulp minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/llxgbs/ecom-llx-shared.git"
+  },
+  "author": "Andy Fairlie",
+  "license": "ISC"
+}

@@ -1,0 +1,144 @@
+.is-large, .is-medium, .not-small {
+	display: none !important;
+	// Dont remove this selector, it is used to detect mobile devices!
+}
+
+.table-mobile-friendly {
+	display: block;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.table-collapse {
+	// Collapses a table into BLOCK elements
+	tr,
+	td,
+	th,
+	thead,
+	tbody,
+	tfoot {
+		display: block;
+	}
+}
+
+.small-relative { position: relative;}
+
+ // Alignment for Mobile
+.small-text-left   { text-align: left;}
+.small-center,
+.small-text-center,
+.small-text-centre  { text-align: center;}
+.small-text-right   { text-align: right;}
+
+.small-align-left,
+.small-float-left   { float: left;}
+
+.small-align-center,
+.small-align-centre { display: block; margin: 0 auto;}
+
+.small-align-right,
+.small-float-right  { float: right;}
+
+// Vertical Alignment - used with inline block elements
+.small-va-top       { vertical-align: top;}
+.small-va-middle    { vertical-align: middle;}
+.small-va-bottom    { vertical-align: bottom;}
+
+
+ // Clearing
+.small-clear-both   { clear: both;}
+.small-clear-right  { clear: right;}
+.small-clear-left   { clear: left;}
+.small-overflow     { overflow: hidden;}
+
+
+// Upper case text
+.small-text-uppercase {
+	.text-uppercase();
+}
+
+
+
+// Reset padding and margin
+.small-menu,
+.small-menu-horz-block,
+.small-menu-horz-inline,
+.small-menu-vert {
+	.menu-mixin();
+}
+
+/* Navigation Layout */
+.small-menu-horz-block {
+	>li { float: left;}
+	a { display: block;}
+}
+
+.small-menu-horz-inline > li {
+	.inline-block();
+}
+.small-menu-vert > li {
+	display: block;
+	float: none;
+}
+
+
+// Display type
+.small-inline-block { display: inline-block;}
+.small-block        { display: block;}
+.small-inline       { display: inline;}
+
+
+// Clearfixing
+.small-clearfix {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Baseline margins
+.baseline-small,
+.small-baseline-small  { margin-bottom: @small-baseline-small;}
+.baseline-medium,
+.small-baseline-medium { margin-bottom: @small-baseline-medium;}
+.baseline-large,
+.small-baseline-large  { margin-bottom: @small-baseline-large;}
+.baseline-huge,
+.small-baseline-huge   { margin-bottom: @small-baseline-huge;}
+
+.small-baseline-none { margin-bottom: 0;}
+
+// Box paddings
+.box-padding-small,
+.small-box-padding-small  { padding: @small-padding-small;}
+.box-padding-medium,
+.small-box-padding-medium { padding: @small-padding-medium;}
+.box-padding-large,
+.small-box-padding-large  { padding: @small-padding-large;}
+
+
+
+// Box borders
+.small-box-border,
+.small-box-border-top,
+.small-box-border-left,
+.small-box-border-right,
+.small-box-border-bottom {
+	border-style: solid;
+	border-color: @border-color;
+	border-width: 0; // Set widths below...
+}
+
+.small-box-border        { border-width: 1px;}
+.small-box-border-top    { border-top-width: 1px;}
+.small-box-border-left   { border-left-width: 1px;}
+.small-box-border-right  { border-right-width: 1px;}
+.small-box-border-bottom { border-bottom-width: 1px;}
+
+
+// Box shading
+.small-box-shaded { background-color: @box-shading;}

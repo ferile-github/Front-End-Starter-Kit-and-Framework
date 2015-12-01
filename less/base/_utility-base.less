@@ -1,0 +1,121 @@
+.relative { position: relative;}
+.pointer { cursor: pointer;}
+
+ // Alignment for Mobile and Desktop
+.text-left {     text-align: left;}
+.center,
+.text-center,
+.text-centre {   text-align: center;}
+.text-right  {   text-align: right;}
+
+.align-left,
+.float-left,
+.left  {    float: left;}
+
+.align-center,
+.align-centre {  display: block; margin: 0 auto;}
+
+.align-right,
+.float-right,
+.right {   float: right;}
+
+
+// Vertical Alignment - used with inline block elements
+.va-top {       vertical-align: top;}
+.va-middle {    vertical-align: middle;}
+.va-bottom {    vertical-align: bottom;}
+
+
+ // Clearing
+.clear-both {        clear: both;}
+.clear-right{        clear: right;}
+.clear-left {        clear: left;}
+.overflow {          overflow: hidden;}
+
+
+// Upper case text
+.text-uppercase {
+	.text-uppercase();
+}
+
+.text-decoration {
+	text-decoration: underline;
+}
+.text-decoration-none {
+	text-decoration: none;
+}
+
+.visuallyhidden,
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+
+
+// Reset padding and margin
+.menu,
+.menu-horz-block,
+.menu-horz-inline,
+.menu-vert {
+	.menu-mixin();
+}
+
+ // Navigation Layout
+.menu-horz-block {
+	> li { float: left;}
+	a  { display: block;}
+}
+.menu-horz-inline > li {
+	.inline-block();
+}
+.menu-vert > li {
+	display : block;
+	float: none;
+}
+
+
+
+// Display type
+.inline-block { display: inline-block;}
+.block,
+.show   {       display: block;}
+.hide   {       display: none !important;}
+.inline {       display: inline;}
+
+
+// Clearfixing
+.clearfix {
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+// Baseline margins
+.baseline-small  { margin-bottom: @baseline-small;}
+.baseline-medium { margin-bottom: @baseline-medium;}
+.baseline-large  { margin-bottom: @baseline-large;}
+.baseline-huge   { margin-bottom: @baseline-huge;}
+
+.baseline-none { margin-bottom: 0;}
+
+
+// Box paddings
+.box-padding-small  { padding: @padding-small;}
+.box-padding-medium { padding: @padding-medium;}
+.box-padding-large  { padding: @padding-large;}
+
+
+// Box shading
+.box-shaded { background-color: @box-shading;}

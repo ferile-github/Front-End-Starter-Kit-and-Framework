@@ -1,0 +1,114 @@
+.is-small, .is-medium, .not-large {
+    display: none !important;
+    // Dont remove this selector, it is used to detect mobile devices!
+}
+
+.large-relative { position: relative;}
+
+ // Alignment for Desktop
+.large-text-left    { text-align: left;}
+.large-center,
+.large-text-center,
+.large-text-centre  { text-align: center;}
+.large-text-right   { text-align: right;}
+
+.large-align-left,
+.large-float-left   { float: left;}
+.large-align-center,
+.large-align-centre { display: block; margin: 0 auto;}
+.large-align-right,
+.large-float-right  { float: right;}
+
+// Vertical Alignment - used with inline block elements
+.large-va-top    { vertical-align: top;}
+.large-va-middle { vertical-align: middle;}
+.large-va-bottom { vertical-align: bottom;}
+
+
+ // Clearing
+.large-clear-both  { clear: both;}
+.large-clear-right { clear: right;}
+.large-clear-left  { clear: left;}
+.large-overflow    { overflow: hidden;}
+
+// Upper case text
+.large-text-uppercase {
+	.text-uppercase();
+}
+
+
+
+// Reset padding and margin
+.large-menu,
+.large-menu-horz-block,
+.large-menu-horz-inline,
+.large-menu-vert {
+	.menu-mixin()
+}
+
+/* Navigation Layout */
+.large-menu-horz-block {
+	> li { float: left;}
+	a { display: block;}
+}
+
+.large-menu-horz-inline > li {
+	.inline-block();
+}
+.large-menu-vert>li {display : block; float: none;}
+
+
+// Display type
+.large-inline-block { display: inline-block;}
+.large-block        { display: block;}
+.large-inline       { display: inline;}
+
+
+// Clearfixing
+.large-clearfix {
+    &:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+
+// Baseline margins
+.large-baseline-small  { margin-bottom: @baseline-small;}
+.large-baseline-medium { margin-bottom: @baseline-medium;}
+.large-baseline-large  { margin-bottom: @baseline-large;}
+.large-baseline-huge   { margin-bottom: @baseline-huge;}
+
+.large-baseline-none   { margin-bottom: 0;}
+
+// Box paddings
+.large-box-padding-small  { padding: @padding-small;}
+.large-box-padding-medium { padding: @padding-medium;}
+.large-box-padding-large  { padding: @padding-large;}
+
+
+// Box borders
+.large-box-border,
+.large-box-border-top,
+.large-box-border-left,
+.large-box-border-right,
+.large-box-border-bottom {
+    border-style: solid;
+    border-color: @border-color;
+    border-width: 0; // Set widths below...
+}
+
+.large-box-border        { border-width: 1px;}
+.large-box-border-top    { border-top-width: 1px;}
+.large-box-border-left   { border-left-width: 1px;}
+.large-box-border-right  { border-right-width: 1px;}
+.large-box-border-bottom { border-bottom-width: 1px;}
+
+
+// Box shading
+.large-box-shaded { background-color: @box-shading;}
