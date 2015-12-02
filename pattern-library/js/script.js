@@ -1,14 +1,10 @@
 function loadcontent(container, href, hash, $link) {
 	$('#result').html(" ");
 	$('#result').append(container);
-	$('#'+hash).load(href, function() {
-		responsive.collectAdaptiveImages();
-		responsive.updateImageSRC();
-	});
+	$('#'+hash).load(href);
 	$('#PATTERNLIB-navigation a').removeClass('is-current');
 	$link.addClass('is-current');
-
-};
+}; 
 
 $(window).ready(function($) {
 	var styleguide = {
@@ -27,26 +23,17 @@ $(window).ready(function($) {
 	}
 });
 
-$(window).resize(function(event) {
-	responsive.isMobile = responsive.mobileDetect();
-	responsive.isTablet = responsive.tabletDetect();
-	responsive.fireEvents();
-});
-
 $(document).ready(function($) {
 
-	responsive.init();
-
-
 	function rgb2hex(rgb) {
-	    rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+		rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
 
-	    function hex(x) {
-	        return ("0" + parseInt(x).toString(16)).slice(-2);
-	    }
+		function hex(x) {
+			return ("0" + parseInt(x).toString(16)).slice(-2);
+		}
 
-	    if(rgb !== null) {
-		    return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+		if(rgb !== null) {
+			return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
 		}
 	}
 
@@ -109,8 +96,6 @@ $(document).ready(function($) {
 		event.stopPropagation();
 
 	});
-
-
 
 
 	$('#PATTERNLIB-navigation a').on('click', function(event) {

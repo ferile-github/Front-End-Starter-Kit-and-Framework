@@ -14,18 +14,13 @@
 .font-face-extended(@name, @weight, @style, @filename) {
 	@font-face {
 		font-family: @name;
-		src:url('@{filename}.eot');
-		src:url('@{filename}.eot') format('embedded-opentype'),
-			url('@{filename}.woff') format('woff'),
-			url('@{filename}.ttf') format('truetype'),
-			url('@{filename}.svg#@{name}') format('svg');
+		src:url('@{filename}.woff') format('woff');
 		font-style: @style;
 		font-weight: @weight;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
 }
-
 
 // Font Sizing
 // ------------
@@ -36,46 +31,8 @@
 
 
 
-// Typography headings
-// ---------------------------------
-.heading-style(@bold) {
-	font-weight: normal;
-	.text-uppercase();
-	& when not(@bold = false) {
-		font-weight: bold;
-	}
-}
-.heading(@importance, @bold:false) when (@importance = 1) {
-	.heading-style(@bold);
-	.font-size(26);
-}
-.heading(@importance, @bold:false) when (@importance = 2) {
-	.heading-style(@bold);
-	.font-size(20);
-}
-.heading(@importance, @bold:false) when (@importance = 3) {
-	.heading-style(@bold);
-	.font-size(18);
-}
-.heading(@importance, @bold:false) when (@importance = 4) {
-	.heading-style(@bold);
-	.font-size(16);
-}
-.heading(@importance, @bold:false) when (@importance = 5) {
-	.heading-style(@bold);
-	.font-size(15);
-	letter-spacing: 1.2px;
-}
-.heading(@importance, @bold:false) when (@importance = 6) {
-	.heading-style(@bold);
-	.font-size(14);
-	letter-spacing: 1.2px;
-}
-
-
 // Columns
 // -------
-
 .column-wrapper(@gutter : 20px) {
 	margin-left: -@gutter/2;
 	margin-right: -@gutter/2;
@@ -97,12 +54,6 @@
 	text-align: center;
 	border-radius: 50%;
 	line-height: @diameter;
-}
-
-// Inline block mixin
-// ------------------
-.inline-block() {
-	display: inline-block;
 }
 
 .clearfix() {
@@ -254,13 +205,6 @@
 		-ms-backface-visibility: @value;
 			backface-visibility: @value;
 }
-
-
-// Easing types
-// ------------
-@cubic-bezier: cubic-bezier(0.785, 0.135, 0.150, 0.860);
-
-
 
 // Flexbox
 // -------

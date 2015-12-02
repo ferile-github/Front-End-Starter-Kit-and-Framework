@@ -3,22 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Style guide and pattern library</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="description" content=" ">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="../images/favicon-144.png">
+	<link href="../images/favicon.png" rel="icon" sizes="32x32">
+	<link href="../images/favicon-152.png" rel="apple-touch-icon-precomposed">
+	<link rel="canonical" href="/">
+
+
 	<link rel="stylesheet" href="css/ignore-me.css">
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/fonts-local.css">
+	<!--[if !IE]> -->	<link rel="stylesheet" href="../css/style.css"><!--<![endif]-->
+	<!--[if IE 9]>		<link rel="stylesheet" href="../css/style-legacy.css"><![endif]-->
 
-	<link href="../images/favicon.png" rel="icon" sizes="32x32" />
-	<link href="../images/favicon-152.png" rel="apple-touch-icon-precomposed" />
-	<meta name="msapplication-TileColor" content="#FFFFFF" />
-	<meta name="msapplication-TileImage" content="../images/favicon-144.png" />
+	<script src="../scripts/modernizr.min.js"></script>
 
-	<meta id="viewport" name="viewport" content="width=device-width" data-mobile-viewport="width=device-width, minimum-scale=1.0, maximum-scale=1.0" data-tablet-viewport="width=1024" />
+	<!--[if !IE]> -->
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!--<![endif]-->
 
-	<script src="js/modernizr-2.8.3.js"></script>
-	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-
-	<script src="//use.typekit.net/slc2ekh.js"></script> <!-- Belstaff fonts -->
-	<script>try{Typekit.load();}catch(e){}</script>
+	<!--[if IE 9]>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<![endif]-->
 
 </head>
 <body>
@@ -28,22 +38,15 @@
 		<div id="main" role="main" class="site-content clearfix">
 			<div class="site-wrapper clearfix">
 
-
-				<h1 class="text-center desktop-baseline-none   mobile-baseline-medium">
-					<img class="primary-logo inline-block" src="../images/logo.svg" alt="Brand Logo" width="180">
-					<span class="visuallyhidden">Brand Logo</span>
-				</h1>
-
-
 				<ol class="menu-PATTERN-LIBRARY-ONLY menu-horz-inline text-center baseline-medium" id="PATTERNLIB-navigation">
 					<li>
-						<a href="colour-swatches.html" data-hash="swatches">Colour swatches</a>
+						<a href="typography.html" data-hash="typography">Typography</a>
 					</li>
 					<li>
 						<a href="headings.html" data-hash="headings">Headings</a>
 					</li>
 					<li>
-						<a href="typography.html" data-hash="typography">Typography</a>
+						<a href="colour-swatches.html" data-hash="swatches">Colour swatches</a>
 					</li>
 					<li>
 						<a href="buttons.html" data-hash="buttons">Buttons</a>
@@ -57,12 +60,6 @@
 					<li>
 						<a href="sprites.html" data-hash="sprites">Sprites/Icons</a>
 					</li>
-					<li>
-						<a href="modules.html" data-hash="modules">Modules</a>
-					</li>
-					<li>
-						<a href="brand_specific.html" data-hash="brand_specific">Brand specific</a>
-					</li>
 				</ol>
 
 				<div id="result" class="clearfix"></div>
@@ -70,8 +67,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.4.1/slick.min.js"></script>
-	<script src="js/responsive.js"></script>
+
 	<script src="js/script.js"></script>
 </body>
 </html>
