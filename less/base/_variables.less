@@ -86,15 +86,14 @@
 @site-max 				: 1280px;
 @tablet-max				: 1025px;
 @tablet-min 			: 767px;
-@small-max 				: @tablet-min;
+@small-max 				: 550px;
 
 @screen : 			~"only screen";
 @print : 			~"only print";
 
-@large: 			~"@{screen} and (min-width : 959px)";
-@medium:  			~"@{screen} and (max-width : 959px)";
+@large: 			~"@{screen} and (min-width : @{tablet-max})";
+@medium:  			~"@{screen} and (min-width : @{small-max}) and (max-width : @{tablet-max})";
 @small : 			~"@{screen} and (max-width : @{small-max})";
 
-
-@tablet-portrait:  	~"@{screen} and (min-width : @{tablet-min}) and (max-width : 959px)";
-@tablet-landscape:  ~"@{screen} and (min-width : @{tablet-min}) and (max-width : @{tablet-max})";
+@tablet-portrait:  	~"@{screen} and (min-device-width : @{tablet-min}) and (max-device-width : 959px)";
+@tablet-landscape:  ~"@{screen} and (min-device-width : @{tablet-min}) and (max-device-width : @{tablet-max})";
