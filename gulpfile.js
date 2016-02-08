@@ -21,34 +21,28 @@ var paths = {
 		dest: './css',
 		imports : './less/**/*.less'
 	},
-	modernizr: {
-		src: ['./js/head/modernizr-2.8.3.js'],
-		dest: './scripts'
+	head: {
+		src: ['./js/head/modernizr-2.8.3.js']
 	},
 	picturefill: {
-		src: ['./js/polyfills/picturefill.js'],
-		dest: './scripts'
+		src: ['./js/polyfills/picturefill.js']
 	},
 	scripts: {
-		src: ['./js/plugins/*.js', './js/script.js'],
-		dest: './scripts'
-	}
+		src: ['./js/plugins/*.js', './js/script.js']
+	},
+	developmentScripts : './scripts',
+	productionScripts : './scripts/production'
 }
 
-var isProduction = false;
-
-if(gutil.env.dev === true) {
-	isProduction = true;
-}
-
-function buildJS(source, output, filename) {
+function buildJS(source, filename) {
 	gulp.src(source)
 	.on("error", notify.onError("Error: <%= error.message %>"))
 	.pipe(concat(filename))
-	.pipe(isProduction ? stripDebug() : gutil.noop())
-	.pipe(isProduction ? uglify() : gutil.noop())
 	.pipe(rename({suffix: '.min'}))
-	.pipe(gulp.dest(output));
+	.pipe(gulp.dest(paths.developmentScripts))
+	.pipe(stripDebug())
+	.pipe(uglify())
+	.pipe(gulp.dest(paths.productionScripts));
 }
 
 
@@ -61,41 +55,41 @@ gulp.task('less', function () {
 	.pipe(gulp.dest(paths.less.dest));
 });
 
-// Build modernizr.js
-gulp.task('modernizr', function() {
-	buildJS(paths.modernizr.src, paths.modernizr.dest, 'modernizr.js');
+// Build head.js
+gulp.task('head', function() {
+	buildJS(paths.head.src, 'head.js');
 });
 
 // Build picturefill.js
 gulp.task('picturefill', function() {
-	buildJS(paths.picturefill.src, paths.picturefill.dest, 'picturefill.js');
+	buildJS(paths.picturefill.src, 'picturefill.js');
 });
 
 // Build scripts.js
 gulp.task('scripts', function() {
-	buildJS(paths.scripts.src, paths.scripts.dest, 'scripts.js');
+	buildJS(paths.scripts.src, 'scripts.js');
 });
 
 // Watch changes in LESS and Javscript
 gulp.task('watch', function () {
-	gulp.watch(paths.less.imports, 	['less']);
-	gulp.watch(paths.modernizr.src, ['modernizr']);
-	gulp.watch(paths.picturefill.src, ['picturefill']);
-	gulp.watch(paths.scripts.src, ['scripts']);
+	gulp.watch(paths.less.imports, 		['less']);
+	gulp.watch(paths.head.src, 			['head']);
+	gulp.watch(paths.picturefill.src, 	['picturefill']);
+	gulp.watch(paths.scripts.src, 		['scripts']);
 });
 
 
 // Build all Front End code, Less and JS
-gulp.task('default', ['less', 'scripts', 'modernizr', 'picturefill', 'watch']);
+gulp.task('default', ['less', 'scripts', 'head', 'picturefill', 'watch']);
 
 // Javascript Linting
 gulp.task('jscs', function () {
-	return gulp.src('**/*.js')
+	return gulp.src('./scripts/*.js')
 		.pipe(jscs());
 });
 
 gulp.task('jshint', function () {
-	return gulp.src('./app_llx/cartridge/static/default/js/**/*.js')
+	return gulp.src('./scripts/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter(stylish));
 });

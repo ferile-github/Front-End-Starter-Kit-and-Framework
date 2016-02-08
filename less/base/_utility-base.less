@@ -112,9 +112,27 @@
 
 
 // Box paddings
-.box-padding-small  { padding: @padding-small;}
-.box-padding-medium { padding: @padding-medium;}
-.box-padding-large  { padding: @padding-large;}
+.padding-small  { padding: @padding-small;}
+.padding-medium { padding: @padding-medium;}
+.padding-large  { padding: @padding-large;}
+
+
+// Box borders
+.border,
+.border-top,
+.border-left,
+.border-right,
+.border-bottom {
+	border-style: solid;
+	border-color: @border-color;
+	border-width: 0; // Set widths below...
+}
+
+.border        { border-width: 1px;}
+.border-top    { border-top-width: 1px;}
+.border-left   { border-left-width: 1px;}
+.border-right  { border-right-width: 1px;}
+.border-bottom { border-bottom-width: 1px;}
 
 
 // Box shading
