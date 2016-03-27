@@ -42,7 +42,7 @@ textarea {
 
 legend {
 	.font-size(15);
-	.text-uppercase();
+
 }
 
 input,
@@ -143,15 +143,10 @@ input[type="search"]::-webkit-search-decoration {
 	width: 1em;
 	height: 1em;
 	background: @white;
-	background:    -moz-linear-gradient(-45deg, @white 0%, @grey1 100%);
-	background:        -webkit-gradient(linear, left top, right bottom, color-stop(0%,@white), color-stop(100%,@grey1));
-	background: -webkit-linear-gradient(-45deg, @white 0%,@grey1 100%);
-	background:      -o-linear-gradient(-45deg, @white 0%,@grey1 100%);
-	background:     -ms-linear-gradient(-45deg, @white 0%,@grey1 100%);
-	background:         linear-gradient(135deg, @white 0%,@grey1 100%);
+	background: linear-gradient(135deg, @white 0%,@grey1 100%);
 	border: solid 1px @border-color;
 	margin-right: @baseline-small/2;
-	.transition(background linear 100ms);
+	transition : background linear 100ms;
 }
 .fake-radio { border-radius: 50%;}
 

@@ -1,5 +1,16 @@
-[class^="icon-"], [class*=" icon-"] {
-	// use !important to prevent issues with browser extensions that change fonts 
+@icon-facebook: "\e900";
+@icon-github: "\e902";
+@icon-skype: "\e903";
+@icon-twitter: "\e901";
+@icon-wordpress:"\e904";
+@icon-linkedin: "\e909";
+@icon-html5: "\e905";
+@icon-html5-alt:"\e906";
+@icon-css3: 	"\e907";
+@icon-email: "\e908";
+
+.icon() {
+	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: 'icomoon' !important;
 	speak: none;
 	font-style: normal;
@@ -7,15 +18,21 @@
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-} 
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
-.icon-facebook:before {		content: "\e900";}
-.icon-github:before {		content: "\e902";}
-.icon-skype:before {		content: "\e903";}
-.icon-twitter:before {		content: "\e901";}
-.icon-wordpress:before {	content: "\e904";}
-.icon-linkedin:before {		content: "\e909";}
-.icon-html5:before {		content: "\e905";}
-.icon-html5-alt:before {	content: "\e906";}
-.icon-css3:before {			content: "\e907";}
-.icon-email:before {		content: "\e908";}
+[class^="icon-"], [class*=" icon-"] {
+	.icon();
+}
+
+.icon-facebook:before {		content: @icon-facebook;}
+.icon-github:before {		content: @icon-github;}
+.icon-skype:before {		content: @icon-skype;}
+.icon-twitter:before {		content: @icon-twitter;}
+.icon-wordpress:before {	content: @icon-wordpress;}
+.icon-linkedin:before {		content: @icon-linkedin;}
+.icon-html5:before {		content: @icon-html5;}
+.icon-html5-alt:before {	content: @icon-html5-alt;}
+.icon-css3:before {			content: @icon-css3;}
+.icon-email:before {		content: @icon-email;}

@@ -1,5 +1,5 @@
 // Base variables
-// --------------
+// ----------------------------------------------------------------
 @body-copy-color : @grey4;
 @body-copy-size  : 14;
 
@@ -8,14 +8,45 @@
 @heading-font       : @body-copy-font;
 @heading-font-bold  : @body-copy-font;
 
+// Site layout
+// ----------------------------------------------------------------
+@site-header-height : 60px;
+@main-header-button-width: @site-header-height;
+
+@site-header-height-mobile : 50px;
+@main-header-button-width-mobile: @site-header-height-mobile;
+
+@wordpress-admin-bar-height: 32px;
+@wordpress-admin-bar-height-mobile: 46px;
+
+@column-padding : 10px;
+
+
+// Off Canvas Menu settings
+// ----------------------------------------------------------------
+@flyoutwidth : 400px;
+@flyoutwidth-mobile : 80%;
+@menu-link-height: 40px;
+@menu-animation : all 500ms @cubic-bezier;
+@menu-screen-position : "right"; // Change to "left" if you need the menu located on the left of the screen
+
+
 // Fonts
-// -----
+// ----------------------------------------------------------------
 @font-arial         : Arial, "Helvetica Neue", Helvetica, sans-serif;
 @font-georgia       : Georgia, Times, "Times New Roman", serif;
+@font-proxima       : "Proxima", serif;
+@font-avenir        : "Avenir", serif;
 
 // Colour Palette
-// --------------
+// ----------------------------------------------------------------
 @error : #9e2022;   // Error Red colour
+
+@navy : #193c6f;
+@aqua : #00bcf2;
+@water : #23559b;
+@purple: #33334f;
+
 @grey5 : #333;      // Ranges from Dark to Light. Lower number is lighter
 @grey4 : #616365;
 @grey3 : #999;
@@ -23,14 +54,23 @@
 @grey1 : #f3f3f3;
 
 
-// Other Colours
-@black : #000;
-@white : #fff;
+@black : black;
+@white : white;
 
 // Link Colours
 @link-color : 			#5caad7;
 @link-color-hover : 	darken(@link-color, 20%);
 @link-color-active : 	orange;
+
+
+
+// Theming colours
+// ----------------------------------------------------------------
+@brand-primary : @navy;
+@brand-primary-hover : darken(@brand-primary, 10%);
+
+@brand-secondary : @aqua;
+@brand-secondary-hover : darken(@brand-secondary, 10%);
 
 // Shading colour
 @box-shading: @grey2;
@@ -38,22 +78,60 @@
 // Border Color - for tables, form elements, boxes, page layout
 @border-color : @grey2;
 
-// Button colours
-@button-primary-bg : @black;
-@button-primary-bg-hover : @grey5;
 
-@button-secondary-bg : @white;
-@button-secondary-bg-hover : @grey1;
 
+
+// Button theming
+// ----------------------------------------------------------------
+@button-border-width : 2px;
+
+// Primary buttons
+@button-primary-text : @white;
+@button-primary-text-hover : @white;
+@button-primary-bg : @brand-primary;
+@button-primary-bg-hover : @white;
+@button-primary-border : @brand-primary;
+@button-primary-border-hover : @white;
+
+// Secondary buttons
+@button-secondary-text : @white;
+@button-secondary-text-hover : @white;
+@button-secondary-bg : @brand-secondary;
+@button-secondary-bg-hover : @white;
+@button-secondary-border : @brand-secondary;
+@button-secondary-border-hover : @white;
+
+// Tertiary buttons
+@button-tertiary-text : @white;
+@button-tertiary-text-hover : @white;
 @button-tertiary-bg : transparent;
-@button-tertiary-bg-hover : transparent;
+@button-tertiary-bg-hover :  @brand-secondary;
+@button-tertiary-border : @white;
+@button-tertiary-border-hover : @brand-secondary;
+
+
+// Form elements theming
+// ----------------------------------------------------------------
+@input-border-width : 2px;
+
+@input-background : @grey1;
+@input-background-hover : @white;
+@input-background-active : @white;
+
+@input-border : @grey1;
+@input-border-hover : @grey1;
+@input-border-active : @grey1;
+
 
 // Easing types
-// ------------
+// ----------------------------------------------------------------
 @cubic-bezier: cubic-bezier(0.785, 0.135, 0.150, 0.860);
-@easing : 400ms all @cubic-bezier; 
+@easing : 400ms all @cubic-bezier;
+
+
 
 // Margins
+// ----------------------------------------------------------------
 @baseline-small  : 10px;
 @baseline-medium : 15px;
 @baseline-large  : 30px;
@@ -66,6 +144,7 @@
 
 
 // Padding
+// ----------------------------------------------------------------
 @padding-small  : 5px;
 @padding-medium : 15px;
 @padding-large  : 30px;
@@ -77,23 +156,44 @@
 @small-padding-large  : 20px;
 @small-padding-huge   : 40px;
 
+
+
 // Z-indexes
-@z-max               : 1000;
-@z-min               : 1;
+// ----------------------------------------------------------------
+@z-max : 10;
+@z-min : 1;
+
+
+// Set max
+@z-modal-wrapper 		: @z-max;
+@z-site-header 			: @z-max - 1;
+@z-touch-toggle-menu 	: @z-max - 2;
+@z-page-wrapper-overlay : @z-max - 3;
+
+// Set min
+// ...
 
 
 // Breakpoints
+// ----------------------------------------------------------------
 @site-max 				: 1280px;
-@tablet-max				: 1025px;
-@tablet-min 			: 767px;
-@small-max 				: 550px;
+@tablet-max				: 1024px;
+@tablet-min 			: 768px;
+@small-max 				: 600px;
 
 @screen : 			~"only screen";
 @print : 			~"only print";
 
-@large: 			~"@{screen} and (min-width : @{tablet-max})";
-@medium:  			~"@{screen} and (min-width : @{small-max}) and (max-width : @{tablet-max})";
-@small : 			~"@{screen} and (max-width : @{small-max})";
 
-@tablet-portrait:  	~"@{screen} and (min-device-width : @{tablet-min}) and (max-device-width : 959px)";
+@lg: 			~"@{screen} and (min-width : 1280px)";
+
+@md:  			~"@{screen} and (min-width : 960px) and (max-width : 1280px)";
+@md-up:			~"@{screen} and (min-width : 960px)";
+
+@sm:  			~"@{screen} and (min-width : 600px) and (max-width : 959px)";
+@sm-up: 		~"@{screen} and (min-width : 600px)";
+
+@xs : 			~"@{screen} and (max-width : 599px)";
+
+@tablet-portrait:  	~"@{screen} and (min-width : @{tablet-min}) and (max-width : 959px)";
 @tablet-landscape:  ~"@{screen} and (min-device-width : @{tablet-min}) and (max-device-width : @{tablet-max})";

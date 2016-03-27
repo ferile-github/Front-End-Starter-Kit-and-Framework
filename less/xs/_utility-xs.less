@@ -1,0 +1,56 @@
+.is-lg, .is-md, .is-sm, .not-xs {
+	display: none !important;
+	// Dont remove this selector, it is used to detect mobile devices!
+}
+.xs-relative { position: relative;}
+
+ // Alignment for Desktop
+.xs-text-left    { text-align: left;}
+.xs-center,
+.xs-text-center,
+.xs-text-centre  { text-align: center;}
+.xs-text-right   { text-align: right;}
+
+.xs-align-left,
+.xs-float-left   { float: left;}
+.xs-align-center,
+.xs-align-centre { display: block; margin: 0 auto;}
+.xs-align-right,
+.xs-float-right  { float: right;}
+
+// Vertical Alignment - used with inline block elements
+.xs-va-top    { vertical-align: top;}
+.xs-va-middle { vertical-align: middle;}
+.xs-va-bottom { vertical-align: bottom;}
+
+
+ // Clearing
+.xs-clear-both  { clear: both;}
+.xs-clear-right { clear: right;}
+.xs-clear-left  { clear: left;}
+.xs-overflow    { overflow: hidden;}
+
+// Reset padding and margin
+.xs-menu,
+.xs-menu-horz-block,
+.xs-menu-horz-inline,
+.xs-menu-vert {
+	.menu-mixin()
+}
+
+/* Navigation Layout */
+.xs-menu-horz-block {
+	> li { float: left;}
+	a { display: block;}
+}
+
+.xs-menu-horz-inline > li {
+	.inline-block();
+}
+.xs-menu-vert>li {display : block; float: none;}
+
+
+// Display type
+.xs-inline-block { display: inline-block;}
+.xs-block        { display: block;}
+.xs-inline       { display: inline;}

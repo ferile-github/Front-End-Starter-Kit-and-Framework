@@ -13,7 +13,9 @@ var gulp 		= require('gulp'),
 	jscs 		= require('gulp-jscs'),
 	jshint 		= require('gulp-jshint'),
 	stylish 	= require('jshint-stylish'),
-	notify 		= require("gulp-notify");
+	notify 		= require("gulp-notify"),
+	autoprefixer = require('gulp-autoprefixer'),
+	combineMq 	= require('gulp-combine-mq');
 
 var paths = {
 	less: {
@@ -51,7 +53,14 @@ gulp.task('less', function () {
 	gulp.src(paths.less.src)
 	.pipe(less())
 	.on("error", notify.onError("Error: <%= error.message %>"))
-	.pipe(cssmin().on('error', gutil.log))
+	.pipe(autoprefixer({
+		browsers: ['last 2 versions'],
+		cascade: false
+	}))
+	.pipe(combineMq({
+		beautify: false
+	}))
+	.pipe(cssmin().on('error', notify.onError("Error: <%= error.message %>")))
 	.pipe(gulp.dest(paths.less.dest));
 });
 
@@ -81,15 +90,3 @@ gulp.task('watch', function () {
 
 // Build all Front End code, Less and JS
 gulp.task('default', ['less', 'scripts', 'head', 'picturefill', 'watch']);
-
-// Javascript Linting
-gulp.task('jscs', function () {
-	return gulp.src('./scripts/*.js')
-		.pipe(jscs());
-});
-
-gulp.task('jshint', function () {
-	return gulp.src('./scripts/*.js')
-		.pipe(jshint())
-		.pipe(jshint.reporter(stylish));
-});

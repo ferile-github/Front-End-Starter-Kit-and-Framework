@@ -1,0 +1,56 @@
+.is-lg, .is-md, .not-sm, .is-xs {
+	display: none !important;
+	// Dont remove this selector, it is used to detect mobile devices!
+}
+.sm-relative { position: relative;}
+
+ // Alignment for Desktop
+.sm-text-left    { text-align: left;}
+.sm-center,
+.sm-text-center,
+.sm-text-centre  { text-align: center;}
+.sm-text-right   { text-align: right;}
+
+.sm-align-left,
+.sm-float-left   { float: left;}
+.sm-align-center,
+.sm-align-centre { display: block; margin: 0 auto;}
+.sm-align-right,
+.sm-float-right  { float: right;}
+
+// Vertical Alignment - used with inline block elements
+.sm-va-top    { vertical-align: top;}
+.sm-va-middle { vertical-align: middle;}
+.sm-va-bottom { vertical-align: bottom;}
+
+
+ // Clearing
+.sm-clear-both  { clear: both;}
+.sm-clear-right { clear: right;}
+.sm-clear-left  { clear: left;}
+.sm-overflow    { overflow: hidden;}
+
+// Reset padding and margin
+.sm-menu,
+.sm-menu-horz-block,
+.sm-menu-horz-inline,
+.sm-menu-vert {
+	.menu-mixin()
+}
+
+/* Navigation Layout */
+.sm-menu-horz-block {
+	> li { float: left;}
+	a { display: block;}
+}
+
+.sm-menu-horz-inline > li {
+	.inline-block();
+}
+.sm-menu-vert>li {display : block; float: none;}
+
+
+// Display type
+.sm-inline-block { display: inline-block;}
+.sm-block        { display: block;}
+.sm-inline       { display: inline;}

@@ -1,0 +1,57 @@
+.not-lg, .is-md, .is-sm, .is-xs {
+	display: none !important;
+	// Dont remove this selector, it is used to detect mobile devices!
+}
+
+.lg-relative { position: relative;}
+
+ // Alignment for Desktop
+.lg-text-left    { text-align: left;}
+.lg-center,
+.lg-text-center,
+.lg-text-centre  { text-align: center;}
+.lg-text-right   { text-align: right;}
+
+.lg-align-left,
+.lg-float-left   { float: left;}
+.lg-align-center,
+.lg-align-centre { display: block; margin: 0 auto;}
+.lg-align-right,
+.lg-float-right  { float: right;}
+
+// Vertical Alignment - used with inline block elements
+.lg-va-top    { vertical-align: top;}
+.lg-va-middle { vertical-align: middle;}
+.lg-va-bottom { vertical-align: bottom;}
+
+
+ // Clearing
+.lg-clear-both  { clear: both;}
+.lg-clear-right { clear: right;}
+.lg-clear-left  { clear: left;}
+.lg-overflow    { overflow: hidden;}
+
+// Reset padding and margin
+.lg-menu,
+.lg-menu-horz-block,
+.lg-menu-horz-inline,
+.lg-menu-vert {
+	.menu-mixin()
+}
+
+/* Navigation Layout */
+.lg-menu-horz-block {
+	> li { float: left;}
+	a { display: block;}
+}
+
+.lg-menu-horz-inline > li {
+	.inline-block();
+}
+.lg-menu-vert>li {display : block; float: none;}
+
+
+// Display type
+.lg-inline-block { display: inline-block;}
+.lg-block        { display: block;}
+.lg-inline       { display: inline;}

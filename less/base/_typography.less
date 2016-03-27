@@ -1,3 +1,5 @@
+// Base Typography
+// ----------------------------------------------------------------
 html {
 	font-size: ~"@{body-copy-size}px";
 	height: 100%;
@@ -13,8 +15,11 @@ body {
 ::selection {       background: @grey2; /* WebKit/Blink Browsers */}
 ::-moz-selection {  background: @grey2; /* Gecko Browsers */}
 
-// Base Typography
-// ---------------
+
+
+
+// Headings
+// ----------------------------------------------------------------
 h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 .5em;
 	line-height: 1;
@@ -22,38 +27,49 @@ h1, h2, h3, h4, h5, h6 {
 		text-decoration: none;
 	}
 }
- 
+
 
 h1, .h1 { .font-size(26); }
 h2, .h2 { .font-size(24); }
 h3, .h3 { .font-size(20); }
 h4, .h4 { .font-size(18); }
 h5, .h5 { .font-size(16); }
-h6, .h6 { .font-size(14); } 
+h6, .h6 { .font-size(14); }
+
+@media @sm-up {
+	h1, .h1 { .font-size(36); }
+	h2, .h2 { .font-size(30); }
+	h3, .h3 { .font-size(24); }
+	h4, .h4 { .font-size(18); }
+}
+
+@media @lg {
+	h1, .h1 { .font-size(58); }
+	h2, .h2 { .font-size(38); }
+}
 
 
+
+
+// Utility text classes
+// ----------------------------------------------------------------
 .bold,
 strong,
 .strong {
 	font-weight: bold;
 }
 
-// to skip  hX styling when use hX tag only for SEO
-.inherit-font-styles {
-	font: inherit;
-	letter-spacing: inherit;
-	text-transform: inherit;
-}
-
-a,
-.btn-tertiary,
-.hyperlink {
+a, .hyperlink {
 	color: @link-color ;
 	text-decoration: underline;
 	cursor: pointer;
 }
 
 
+
+
+// Typography tag reset
+// ----------------------------------------------------------------
 p {
 	margin: 0 0 @baseline-medium 0;
 }
@@ -95,24 +111,10 @@ ul, ol, dl {
 }
 
 
-
-// Table Styles
-// ------------
-.table-basic {
-	tbody {
-		border: solid 1px @border-color;
-	}
-	td, th {
-		padding: 5px;
-	}
-
-	th {
-		border: none;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-weight: normal;
-	}
-	td, th[scope=row] {
-		border-bottom: solid 1px @border-color
+blockquote {
+	margin: 0;
+	margin-bottom: @baseline-medium;
+	p {
+		margin: 0;
 	}
 }

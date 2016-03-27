@@ -1,36 +1,54 @@
-.button-full-width {
+// Buttons
+// ----------------------------------------------------------------
+.btn-full-width {
 	padding-left: 0;
 	padding-right: 0;
 	text-align: center;
 	width: 100%;
 }
- 
+
+
 
 .btn-primary,
-.btn-secondary  {
+.btn-secondary,
+.btn-tertiary  {
 	display: inline-block;
 	background: none;
-	border: none;
+	border: solid @button-border-width;
 	text-transform: uppercase;
 	text-decoration: none;
-	letter-spacing: 1.5px;
+	font-weight: bold;
 	text-align: center;
 	line-height: 1; // override body line-height, and ensures buttons and other elements are styled similarly
-	padding: 10px 15px;
 	cursor: pointer;
-	.transition(all 200ms ease-in);
+	transition: all 200ms ease-in;
+	padding: 8px 14px;
 
+	@media @xs {
+		margin: 0 auto;
+		margin-bottom: @baseline-small;
+		padding: 14px 20px;
+	}
+
+	@media @md {
+		padding: 11px 24px;
+	}
+	@media @lg {
+		padding: 11px 34px;
+	}
 }
+
 
 .btn-primary {
 	background: @button-primary-bg;
-	border: solid 1px @button-primary-bg;
+	border-color: @button-primary-bg;
 	color: @white;
 
 	.no-touch &:hover,
 	.touch &:active {
 		background: @button-primary-bg-hover;
-		color: @white; // For overriding links with a button class
+		color: @button-primary-bg; // For overriding links with a button class
+		border-color: @button-primary-bg-hover;
 	}
 	&.disabled,
 	&[disabled],
@@ -38,86 +56,54 @@
 	&[disabled]:hover {
 		background: @body-copy-color;
 		border-color: @body-copy-color;
+		color: @white;
 	}
 }
 
+
 .btn-secondary {
-	background: @button-secondary-bg ;
-	border: solid 1px @grey5;
-	color: @grey5;
+	background: @button-secondary-bg;
+	border-color: @button-secondary-border;
+	color: @button-secondary-text;
 
 	.no-touch &:hover,
 	.touch &:active {
 		background: @button-secondary-bg-hover;
-		color: @grey5; // For overriding links with a button class
+		border-color: @button-secondary-border-hover;
+		color: @button-secondary-bg; // For overriding links with a button class
 	}
 
 	&.disabled,
 	&[disabled],
 	&.disabled:hover,
 	&[disabled]:hover {
-		background: @white;
+		background: @grey5;
+		border-color: @grey5;
+		color: @white;
 	}
 }
 
 
 .btn-tertiary {
 	background: @button-tertiary-bg ;
-	border: none;
-	cursor: pointer;
-	padding: 0;
-	text-transform: uppercase;
+	border-color: @button-tertiary-border;
+	color: @button-tertiary-text;
 
 	.no-touch &:hover,
-	.touch &:active {}
-
+	.touch &:active {
+		color: @button-tertiary-text-hover;
+		border-color: @button-tertiary-border-hover;
+		background-color: @button-tertiary-bg-hover;
+	}
 
 	&.disabled,
 	&[disabled],
 	&.disabled:hover,
 	&[disabled]:hover {
 		text-decoration: none;
-		color: @grey5;
+		color: @grey3;
+		border-color: @grey3;
 	}
-}
-
-
-
-// Call to action buttons
-// ----------------------
-.btn-cta-primary,
-.btn-cta-secondary {
-	display: inline-block;
-	position: relative;
-	border: none;
-	text-transform: uppercase;
-	text-decoration: none;
-	text-align: center;
-	font-weight: normal;
-	letter-spacing: 1.2px;
-	background: none;
-	cursor: pointer;
-	.transition(background 200ms ease-in);
-
-	.no-touch &:hover,
-	.touch &:active {
-		text-decoration: underline;
-	}
-
-	&.disabled,
-	&[disabled],
-	&.disabled:hover,
-	&[disabled]:hover  {
-
-	}
-}
-
-.btn-cta-primary {
-	.font-size(14);
-}
-
-.btn-cta-secondary {
-	.font-size(12);
 }
 
 
@@ -126,6 +112,7 @@
 	cursor: default;
 	opacity: .5;
 }
+
 
 .btn-large {
 	.font-size(16);

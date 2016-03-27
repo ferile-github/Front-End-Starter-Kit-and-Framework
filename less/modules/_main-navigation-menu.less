@@ -1,0 +1,250 @@
+// Site Navigation menu
+// ----------------------------------------------------------------
+
+// Set some easing for the Page and header wrappers
+// ----------------------------------------------------------------
+.has-menu-animation,
+.menu-site-navigation {
+	transition: @menu-animation;
+}
+
+// All menu link items
+// ----------------------------------------------------------------
+.menu-item {}
+
+	.menu-main-link {
+		display: block;
+		position: relative;
+		padding: 0 15px;
+		height: @menu-link-height;
+		line-height:@menu-link-height;
+		border-bottom: solid 2px @white;
+		color: @white;
+		transition: background 200ms @cubic-bezier;
+		.font-size(16);
+		&:hover {
+			background-color: @water;
+			color: @white;
+		}
+		&:after {
+			.icon();
+			line-height:@menu-link-height;
+			display: block;
+			position: absolute;
+			top: 0;
+		}
+	}
+
+		// If a menu item is a category
+		.menu-item-has-children>.menu-main-link {
+			&:after {
+				content: ">";
+				right: 15px;
+			}
+		}
+
+
+		// Back button
+		.js-menu-back-button {
+			text-align: right;
+			&:after {
+				content: "<";
+				left: 15px;
+			}
+		}
+
+
+
+// Toggle menu button
+// ----------------------------------------------------------------
+.touch-toggle-menu  {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: @z-touch-toggle-menu;
+
+	background: @brand-secondary;
+	color: white;
+	border: none;
+	padding: 0;
+	font-size: @site-header-height/1.5;
+	line-height: 1;
+	width: @main-header-button-width;
+
+	text-align: center;
+	@media @xs {
+		width: @main-header-button-width-mobile;
+		font-size: @site-header-height-mobile;
+	}
+
+	.icon-close {
+		display: none;
+	}
+}
+
+
+
+// Join button in header
+// ----------------------------------------------------------------
+.header-join-button {
+	position: absolute;
+	top: 0;
+	right: @main-header-button-width;
+	bottom: 0;
+	background-color: @white;
+	width: @main-header-button-width;
+	text-transform: uppercase;
+
+	@media @xs {
+		width: @main-header-button-width-mobile;
+		right: @main-header-button-width-mobile;
+		.font-size(11);
+	}
+}
+
+
+
+
+// Main menu wrapper
+// ----------------------------------------------------------------
+.wrapper-site-navigation {
+	opacity: 0;
+	position: fixed;
+	bottom: 0;
+	transition: @menu-animation;
+	background: @brand-secondary;
+	padding-top: 20px;
+
+
+	& when (@menu-screen-position = "right") {
+		right: 0;
+		transform: translate3d(100%, 0, 0);
+	}
+	& when (@menu-screen-position = "left") {
+		left: 0;
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	@media @xs {
+		top: @site-header-height-mobile;
+		width: @flyoutwidth-mobile;
+		// If there is a Wordpress Admin menu showing
+		.admin-bar & {
+			top: @wordpress-admin-bar-height-mobile + @site-header-height-mobile;
+		}
+	}
+
+	@media @sm-up {
+		top: @site-header-height;
+		width: @flyoutwidth;
+		// If there is a Wordpress Admin menu showing
+		.admin-bar & {
+			top: @wordpress-admin-bar-height + @site-header-height;
+		}
+	}
+}
+
+
+// Main menu list
+// ----------------------------------------------------------------
+.site-navigation {
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
+	min-height: 100vh;
+}
+
+
+
+
+// Functionality
+// ----------------------------------------------------------------
+.page-wrapper-overlay {
+	display: none;
+	z-index: @z-page-wrapper-overlay;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	cursor: pointer;
+	transition: all 500ms linear;
+	background: fade(@black, 40%);
+
+	&:hover {
+		background: fade(@black, 10%);
+	}
+}
+
+// Toggle for the main navigation
+.has-navigation-active {
+	// Animate all elements with this class, slide left to show the menu : header, content and footer
+	@media @sm-up {
+		.has-menu-animation {
+			& when (@menu-screen-position = "right") {
+				transform: translate3d(-@flyoutwidth, 0, 0);
+			}
+			& when (@menu-screen-position = "left") {
+				transform: translate3d(@flyoutwidth, 0, 0);
+			}
+		}
+	}
+
+	@media @xs {
+		.has-menu-animation {
+			& when (@menu-screen-position = "right") {
+				transform: translate3d(-@flyoutwidth-mobile, 0, 0);
+			}
+			& when (@menu-screen-position = "left") {
+				transform: translate3d(@flyoutwidth-mobile, 0, 0);
+			}
+		}
+	}
+	// Slide in the main menu
+	.wrapper-site-navigation {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+	.page-wrapper-overlay {
+		display: block;
+	}
+	.touch-toggle-menu {
+		.icon-close {
+			display: inline-block;
+		}
+		.icon-menu {
+			display: none;
+		}
+	}
+}
+
+
+
+// Animation for the category slide panels inside main navigation
+// ----------------------------------------------------------------
+.cascade-level-1 .menu-site-navigation { }
+.cascade-level-2 .menu-site-navigation { transform: translate3d(-100%, 0, 0);}
+.cascade-level-3 .menu-site-navigation { transform: translate3d(-200%, 0, 0);}
+.cascade-level-4 .menu-site-navigation { transform: translate3d(-300%, 0, 0);}
+.cascade-level-5 .menu-site-navigation { transform: translate3d(-400%, 0, 0);}
+
+.level-2-wrapper,
+.level-3-wrapper,
+.level-4-wrapper,
+.level-5-wrapper {
+	transform: translate3d(100%, 0, 0);
+	position: absolute;
+	top: 0;
+	width: 100%;
+	display: none;
+}
+
+.level-1-item.is-active > .level-2-wrapper,
+.level-2-item.is-active > .level-3-wrapper,
+.level-3-item.is-active > .level-4-wrapper,
+.level-4-item.is-active > .level-5-wrapper   {
+	display: block;
+}
+

@@ -2,7 +2,8 @@ var PROJECTNAME = {
 	config : {
 
 	},
-	init : function() {
+	init : function($) {
+		"use strict";
 		// Place your document.ready events here
 		// ...
 
@@ -15,7 +16,8 @@ var PROJECTNAME = {
 	}
 };
 
-$(function() {
-	PROJECTNAME.init();
+(function($) {
+	"use strict";
+	PROJECTNAME.init($);
 	$(window).resize(responsive.fireEvents);
-});
+})(jQuery);

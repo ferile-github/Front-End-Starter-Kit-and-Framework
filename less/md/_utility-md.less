@@ -1,0 +1,57 @@
+.is-lg, .not-md, .is-sm, .is-xs {
+	display: none !important;
+	// Dont remove this selector, it is used to detect mobile devices!
+}
+
+.md-relative { position: relative;}
+
+ // Alignment for Desktop
+.md-text-left    { text-align: left;}
+.md-center,
+.md-text-center,
+.md-text-centre  { text-align: center;}
+.md-text-right   { text-align: right;}
+
+.md-align-left,
+.md-float-left   { float: left;}
+.md-align-center,
+.md-align-centre { display: block; margin: 0 auto;}
+.md-align-right,
+.md-float-right  { float: right;}
+
+// Vertical Alignment - used with inline block elements
+.md-va-top    { vertical-align: top;}
+.md-va-middle { vertical-align: middle;}
+.md-va-bottom { vertical-align: bottom;}
+
+
+ // Clearing
+.md-clear-both  { clear: both;}
+.md-clear-right { clear: right;}
+.md-clear-left  { clear: left;}
+.md-overflow    { overflow: hidden;}
+
+// Reset padding and margin
+.md-menu,
+.md-menu-horz-block,
+.md-menu-horz-inline,
+.md-menu-vert {
+	.menu-mixin()
+}
+
+/* Navigation Layout */
+.md-menu-horz-block {
+	> li { float: left;}
+	a { display: block;}
+}
+
+.md-menu-horz-inline > li {
+	.inline-block();
+}
+.md-menu-vert>li {display : block; float: none;}
+
+
+// Display type
+.md-inline-block { display: inline-block;}
+.md-block        { display: block;}
+.md-inline       { display: inline;}
