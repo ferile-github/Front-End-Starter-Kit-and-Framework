@@ -1,21 +1,21 @@
-var gulp 		= require('gulp'),
-	gutil 		= require('gulp-util'),
-	less 		= require('gulp-less'),
-	cssmin 		= require('gulp-cssmin'),
-	rename 		= require('gulp-rename'),
-	concat 		= require('gulp-concat'),
-	uglify 		= require('gulp-uglify'),
-	stripDebug 	= require('gulp-strip-debug'),
-	buffer 		= require('vinyl-buffer');
-	watchify 	= require('watchify'),
-	source 		= require('vinyl-source-stream'),
-	xtend 		= require('xtend'),
-	jscs 		= require('gulp-jscs'),
-	jshint 		= require('gulp-jshint'),
-	stylish 	= require('jshint-stylish'),
-	notify 		= require("gulp-notify"),
-	autoprefixer = require('gulp-autoprefixer'),
-	combineMq 	= require('gulp-combine-mq');
+var gulp 		= require('gulp');
+var	gutil 		= require('gulp-util');
+var	less 		= require('gulp-less');
+var	cssmin 		= require('gulp-cssmin');
+var	rename 		= require('gulp-rename');
+var	concat 		= require('gulp-concat');
+var	uglify 		= require('gulp-uglify');
+var	stripDebug 	= require('gulp-strip-debug');
+var	buffer 		= require('vinyl-buffer');
+var	watchify 	= require('watchify');
+var	source 		= require('vinyl-source-stream');
+var	xtend 		= require('xtend');
+var	jscs 		= require('gulp-jscs');
+var	jshint 		= require('gulp-jshint');
+var	stylish 	= require('jshint-stylish');
+var	notify 		= require("gulp-notify");
+var	autoprefixer = require('gulp-autoprefixer');
+var	combineMq 	= require('gulp-combine-mq');
 
 var paths = {
 	less: {
@@ -34,7 +34,7 @@ var paths = {
 	},
 	developmentScripts : './scripts',
 	productionScripts : './scripts/production'
-}
+};
 
 function buildJS(source, filename) {
 	gulp.src(source)
